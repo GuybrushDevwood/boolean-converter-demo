@@ -32,7 +32,7 @@ class ExampleEntityRepoTest {
 
   @Test
   void findByActiveIsFalse() {
-    List<ExampleEntity> byActiveFalse = repo.findByActiveFalse();
+    List<ExampleEntity> byActiveFalse = repo.findByActiveIsFalse();
     /* Error:
     org.springframework.dao.DataIntegrityViolationException: JDBC exception executing SQL [select e1_0.id,e1_0.active from example_entity e1_0 where e1_0.active=0]; SQL [n/a]
     */

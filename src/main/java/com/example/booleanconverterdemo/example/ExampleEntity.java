@@ -1,5 +1,6 @@
 package com.example.booleanconverterdemo.example;
 
+import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -12,7 +13,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.type.YesNoConverter;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,6 +29,7 @@ public class ExampleEntity {
   @Column(nullable = false, updatable = false)
   private String id;
 
-  @Convert(converter = YesNoConverter.class)
+  @Basic
+  @Convert(converter = org.hibernate.type.YesNoConverter.class)
   private boolean active;
 }
